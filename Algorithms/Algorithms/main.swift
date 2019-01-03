@@ -8,5 +8,12 @@
 
 import Foundation
 
-print("Hello, World!")
 
+let str = "Sandeep"
+let str1 = "hfgawwt"
+
+for i in 0..<str.count {
+    let index = str.index(str.startIndex, offsetBy: i)
+    let diff = abs(Int(str1[index].unicodeScalars.first?.value as! UInt32) - Int(str[index].unicodeScalars.first?.value as! UInt32))
+    print(diff)
+}

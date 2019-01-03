@@ -114,7 +114,7 @@ class SortedStack {
     
 }
 
-
+/*
 var ss = SortedStack()
 
 let nums = [10, 3, 12, 7, 2, 11, 9]
@@ -125,7 +125,7 @@ for num in nums {
 
 ss.printSortedStack()
 
-
+*/
 
 
 /*

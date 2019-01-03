@@ -15,9 +15,9 @@ and dequeueCat. You may use the built-in Linked List data structure.
 
 
 
-class Node {
+class CNode {
     var data: String?
-    var next: Node?
+    var next: CNode?
     
     init(data: String) {
         self.data = data
@@ -26,8 +26,8 @@ class Node {
 }
 
 class CatDogList {
-    var oldest: Node?
-    var latest: Node?
+    var oldest: CNode?
+    var latest: CNode?
     
     init() {
         self.oldest = nil
@@ -36,7 +36,7 @@ class CatDogList {
     
     func enqueue(data: String) {
         if oldest == nil {
-            self.oldest  = Node(data: data)
+            self.oldest  = CNode(data: data)
             return
         }
         
@@ -46,7 +46,7 @@ class CatDogList {
             current = current?.next
         }
 
-        let new_node = Node(data: data)
+        let new_node = CNode(data: data)
         current?.next = new_node
         
     }
@@ -78,7 +78,7 @@ class CatDogList {
         }
         
         var current = self.oldest
-        var prev: Node? = nil
+        var prev: CNode? = nil
         if current!.next != nil {
             prev = self.oldest
         }
@@ -113,25 +113,26 @@ class CatDogList {
     }
 }
 
-
+/*
 var sh = CatDogList()
 sh.enqueue(data:"Dog")
 sh.enqueue(data:"Cat")
+sh.enqueue(data:"Cat")
 sh.enqueue(data:"Dog")
 sh.enqueue(data:"Dog")
 sh.enqueue(data:"Cat")
+sh.enqueue(data:"Cat")
+sh.enqueue(data:"Cat")
+sh.enqueue(data:"Dog")
+sh.enqueue(data:"Dog")
+sh.enqueue(data:"Dog")
 
 print(sh.dequeueAny())
+print(sh.dequeueAny())
+
 sh.dequeueCat()
 sh.dequeueCat()
-sh.dequeueCat()
-sh.dequeueCat()
-sh.dequeueCat()
-sh.dequeueCat()
-sh.dequeueDog()
-sh.dequeueDog()
-sh.dequeueDog()
-sh.dequeueDog()
+*/
 
 
 /*

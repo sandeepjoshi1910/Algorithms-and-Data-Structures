@@ -1,22 +1,21 @@
 
-class Node {
-    var data: Int?
-    var next: Node?
-}
+
+// Created by Sandeep Joshi on 06/17/2018
+// Implementation of Queue in Swift
+
 
 class Queue {
     var head: Node?
 
     func enqueue(value: Int) {
-        let new_node = Node()
-        new_node.data = value
+        let new_node = Node(data: value)
+        
 
         if head?.data != nil {
             new_node.next = head
             head = new_node
         } else {
-            head = Node()
-            head?.data = value
+            head = Node(data: value)
             head?.next = nil
         }
     }
@@ -31,15 +30,4 @@ class Queue {
         current?.next = nil
         return data
     }
-}
-
-
-var q = Queue()
-let nums = [1,2,3,4,5,6,7,8,9]
-for num in nums {
-    q.enqueue(value: num)
-}
-
-for _ in nums {
-    print(q.dequeue())
 }

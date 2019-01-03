@@ -11,24 +11,19 @@ SetOfStacks. push () and SetOfStacks. pop () should behave identically to a sing
 
 // Assumption: Max size of each stack is 5
 
-class Node {
-    var data: Int?
-    var next: Node?
-}
 
-class Stack {
+
+class SStack {
     
     var top: Node? = nil
     var size: Int = 0
         
     func push(value: Int) {
         
-        let new_node = Node()
-        new_node.data = value
+        let new_node = Node(data: value)
         new_node.next = top
         top = new_node
         self.size = self.size + 1
-        // print("Pushed")
     }
     
     func peek()->Int {
@@ -66,15 +61,15 @@ class Stack {
 
 class SetOfStacks {
 
-    var stacks: [Stack] = []
+    var stacks: [SStack] = []
 
     func push(value: Int) {
-        var stack: Stack?
+        var stack: SStack?
         if self.stacks.isEmpty {
-            stack = Stack()
+            stack = SStack()
             self.stacks.append(stack!)
         } else if self.stacks.last!.size == 5 {
-            stack = Stack()
+            stack = SStack()
             self.stacks.append(stack!)
         } else {
             stack = self.stacks.last!
@@ -111,7 +106,8 @@ class SetOfStacks {
     }
 }
 
-let s = SetOfStacks()
+/*
+ let s = SetOfStacks()
 
 let nums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
@@ -130,3 +126,4 @@ for _ in nums {
 print("Printing stacks again")
 s.printStacks()
 
+*/
